@@ -1,0 +1,138 @@
+/*=============================
+============ header
+===============================*/
+.landing__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 70px;
+  margin: auto;
+
+  // brand
+  .header__brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // background-color: #eb5151;
+    height: 100%;
+
+    .brand__name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .brand__line {
+      background-color: map-get($colors, main-blue);
+      width: 25%;
+      height: 6px;
+      border-radius: 4px;
+      margin-top: 5px;
+      transition: all 0.5s ease;
+    }
+
+    &:hover .brand__line {
+      width: 15%;
+    }
+  }
+
+  // navigation
+  .header__navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+
+    // menu icon
+    .navigation__icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+
+      .icon__bar {
+        background-color: #ffffff;
+        height: 2px;
+        border-radius: 5px;
+        width: 100%;
+        transition: all 0.3s linear;
+
+        &:nth-child(2) {
+          margin: 4px 0;
+        }
+      }
+
+      &:hover .icon__bar:nth-child(2) {
+        margin: 6px 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .navigation__items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      top: 70px;
+      right: -100%;
+      width: 100%;
+      height: 60px;
+      list-style: none;
+      transition: all 0.2s ease-out;
+      border-bottom: 1px solid map-get($colors, light-gray);
+
+      .navigation__item {
+        height: 100%;
+        width: 20%;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          color: #ffffff;
+          font-family: inherit;
+          text-decoration: none;
+          transition: all 0.2s linear;
+
+          &:hover {
+            letter-spacing: 1px;
+            color: map-get($colors, main-blue);
+          }
+        }
+      }
+
+      // desktop screen
+      @media screen and (min-width: 1024px) {
+        justify-content: flex-end;
+        position: static;
+        top: initial;
+        right: initial;
+        border: none;
+
+        .navigation__item {
+          height: 100%;
+          width: 12%;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+// open navigation list menu
+.open-navigation-list {
+  right: 0 !important;
+}
+// desktop size style
+@media screen and (min-width: 64rem) {
+}

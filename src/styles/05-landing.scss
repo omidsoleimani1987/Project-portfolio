@@ -1,0 +1,16 @@
+.landing {
+  background-color: map-get($colors, main-gray);
+  //  ! change this height
+  height: 800px;
+  margin-bottom: 1000px;
+
+  /*=============================
+    ============ header
+    ===============================*/
+  @import '01-header.scss';
+
+  /*=============================
+    ============ info
+    ===============================*/
+  @import '04-info.scss';
+}

@@ -1,0 +1,135 @@
+.landing__intro {
+  transform: translateY(-50px);
+  opacity: 0;
+
+  div > p {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+
+    &:hover {
+      color: map-get($colors, main-blue);
+    }
+  }
+
+  // Hi,
+  .intro__hi {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  // I'm Omid
+  .intro__person {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .person__first,
+    .person__second {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: 5px;
+    }
+
+    .person__second p:not(:last-child) {
+      color: map-get($colors, main-blue);
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  // web developer.
+  .intro__developer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .developer__first,
+    .developer__second {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: 5px;
+    }
+  }
+
+  .intro__summary {
+    color: map-get($colors, middle-gray);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    animation: none;
+  }
+
+  .intro__resume {
+    display: inline-block;
+    text-decoration: none;
+    color: map-get($colors, main-blue);
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: 1px solid map-get($colors, main-blue);
+    border-radius: 8px;
+
+    &:hover {
+      background-color: map-get($colors, main-blue);
+      color: #ffffff;
+    }
+  }
+}
+
+// animation class
+.beat-animation {
+  animation: beat 0.8s ease forwards;
+}
+
+.fade-in {
+  animation: fade 1s 1s ease forwards;
+}
+
+@keyframes beat {
+  0% {
+    transform: scaleY(1);
+  }
+
+  40% {
+    transform: scaleY(0.5);
+  }
+
+  45% {
+    transform: scaleY(1);
+  }
+
+  70% {
+    transform: scaleY(0.7);
+  }
+
+  75% {
+    transform: scaleY(1);
+  }
+
+  85% {
+    transform: scaleY(0.9);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
