@@ -1,7 +1,7 @@
 .landing {
   background-color: map-get($colors, main-gray);
   //  ! change this height
-  height: 800px;
+  height: 1300px;
   margin-bottom: 1000px;
 
   /*=============================
@@ -13,4 +13,14 @@
     ============ info
     ===============================*/
   @import '04-info.scss';
+
+  /*=============================
+    ============ info
+    ===============================*/
+  @import '04-info.scss';
+
+  /*=============================
+    ============ info
+    ===============================*/
+  @import '05-contact.scss';
 }
