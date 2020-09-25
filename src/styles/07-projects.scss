@@ -1,0 +1,103 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 32px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    .project__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10px;
+
+      .project__title {
+        font-size: 1.5625rem;
+        font-weight: 600;
+        margin: 10px 0 9px;
+        color: map-get($colors, main-blue);
+      }
+
+      .project__summary {
+        margin-bottom: 10px;
+        font-size: 1.125rem;
+        color: map-get($colors, dark-gray);
+      }
+
+      .project__stack {
+        margin-bottom: 4px;
+        font-size: 1rem;
+        color: map-get($colors, dark-gray);
+      }
+
+      .project__features {
+        margin-bottom: 6px;
+        font-size: 1rem;
+        color: map-get($colors, light-text-gray);
+      }
+
+      .info__action {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 20px;
+
+        a {
+          text-decoration: none;
+          padding: 5px 0;
+          border: 1px solid map-get($colors, main-blue);
+          width: 130px;
+          border-radius: 2px;
+          margin-right: 10px;
+          color: map-get($colors, main-blue);
+          text-align: center;
+          transition: all 0.3s ease;
+          font-weight: 500;
+
+          &:hover {
+            color: #ffffff;
+            background-color: map-get($colors, main-blue);
+          }
+        }
+      }
+    }
+
+    .project__image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      width: 90%;
+      .project__info {
+        width: 45%;
+      }
+      .project__image {
+        flex-grow: 1;
+        // width: 30% !important;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+}

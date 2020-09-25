@@ -1,8 +1,20 @@
 .landing {
   background-color: map-get($colors, main-gray);
-  //  ! change this height
-  height: 1300px;
-  margin-bottom: 1000px;
+  margin-bottom: 150px;
+  position: relative;
+
+  &::after {
+    background-color: map-get($colors, main-gray);
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+    transform: skewY(5deg);
+  }
 
   /*=============================
     ============ header

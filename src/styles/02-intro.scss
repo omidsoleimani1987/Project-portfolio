@@ -7,7 +7,7 @@
   height: 300px;
   transform: translateY(-50px);
   opacity: 0;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 3.125rem;
 
   div > p {
     color: #ffffff;
@@ -81,6 +81,7 @@
   }
 
   @media screen and (min-width: 56.875rem) {
+    padding: 0.625rem 1.25rem;
     height: 100%;
   }
 }
