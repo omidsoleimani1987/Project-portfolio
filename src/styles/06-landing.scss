@@ -1,6 +1,7 @@
 .landing {
   background-color: map-get($colors, main-gray);
-  margin-bottom: 150px;
+  padding-bottom: 6.25rem;
+  margin-bottom: 12.5rem;
   position: relative;
 
   &::after {

@@ -1,15 +1,13 @@
 .landing__contact {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  padding: 0 0.9375rem 4.375rem;
 
   .contact__private {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 1.25rem;
 
     .private__icons {
       display: flex;
@@ -38,13 +36,15 @@
         margin: 0.3125rem 0;
         color: white;
 
-        a {
+        a,
+        a:active,
+        a:visited {
           text-decoration: none;
           color: white;
+        }
 
-          &:hover {
-            color: map-get($colors, main-blue);
-          }
+        a:hover {
+          color: map-get($colors, main-blue);
         }
       }
     }
@@ -53,42 +53,50 @@
   .contact__social {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
-    margin: 0 1.25rem;
     height: 100%;
 
-    i {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 1.875rem;
-      color: white;
-      margin: 0.4375rem 0;
-      transition: all 0.5s ease;
-      width: 100px;
+    a,
+    a:active,
+    a:visited {
+      text-decoration: none;
 
-      & > span {
-        display: none;
-        font-family: 'Rubik', sans-serif;
-        font-size: 0.9375rem;
-      }
-
-      &:hover {
-        cursor: pointer;
-        color: map-get($colors, main-blue);
+      i {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.875rem;
+        color: white;
+        margin: 0.4375rem 0;
+        transition: all 0.5s ease;
+        width: 100px;
 
         & > span {
-          display: initial;
-          transform: translateX(8px);
+          display: none;
+          font-family: 'Rubik', sans-serif;
+          font-size: 0.9375rem;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: map-get($colors, main-blue);
+
+          & > span {
+            display: initial;
+            transform: translateX(8px);
+          }
         }
       }
     }
   }
 
-  @media screen and (min-width: 56.875rem) {
+  @media screen and (min-width: 53.125rem) {
     flex-direction: row;
-    justify-content: flex-start;
-    padding-left: 10%;
+    justify-content: center;
+
+    .contact__social {
+      margin-left: 1.25rem;
+    }
   }
 }

@@ -3,48 +3,50 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 1.25rem;
 
   h1 {
-    font-size: 32px;
-    padding: 0 20px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    padding: 0 1.25rem;
+    margin-bottom: 1.875rem;
   }
 
   .project {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(200px);
 
     .project__info {
-      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 0 10px;
+      padding: 0 0.625rem;
 
       .project__title {
         font-size: 1.5625rem;
         font-weight: 600;
-        margin: 10px 0 9px;
+        margin: 0.625rem 0 0.5625rem;
         color: map-get($colors, main-blue);
       }
 
       .project__summary {
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
         font-size: 1.125rem;
         color: map-get($colors, dark-gray);
       }
 
       .project__stack {
-        margin-bottom: 4px;
+        margin-bottom: 0.25rem;
         font-size: 1rem;
         color: map-get($colors, dark-gray);
       }
 
       .project__features {
-        margin-bottom: 6px;
+        margin-bottom: 0.375rem;
         font-size: 1rem;
         color: map-get($colors, light-text-gray);
       }
@@ -54,15 +56,15 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-top: 20px;
+        margin-top: 1.25rem;
 
         a {
           text-decoration: none;
-          padding: 5px 0;
+          padding: 0.3125rem 0;
           border: 1px solid map-get($colors, main-blue);
           width: 130px;
           border-radius: 2px;
-          margin-right: 10px;
+          margin-right: 0.625rem;
           color: map-get($colors, main-blue);
           text-align: center;
           transition: all 0.3s ease;
@@ -77,27 +79,51 @@
     }
 
     .project__image {
-      width: 100%;
-
       img {
         width: 100%;
         height: 100%;
       }
     }
 
-    @media screen and (min-width: 600px) {
-      width: 90%;
-      .project__info {
-        width: 45%;
-      }
-      .project__image {
-        flex-grow: 1;
-        // width: 30% !important;
-      }
-    }
-
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 64rem) {
       flex-direction: row;
+      justify-content: space-around;
+
+      .project__info {
+        .project__title {
+          font-size: 1.875rem;
+        }
+
+        .project__summary {
+          font-size: 1.4375rem;
+        }
+
+        .project__stack,
+        .project__features {
+          font-size: 1.3125rem;
+        }
+      }
+
+      .project__image {
+        max-width: 60%;
+      }
     }
+  }
+}
+
+// fade-in the project separately
+.fade-in-project {
+  animation: project-fade-in 0.5s ease forwards;
+}
+
+@keyframes project-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

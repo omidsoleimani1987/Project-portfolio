@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3.125rem;
+  margin-bottom: 6.25rem;
 
   /*=============================
         ============ intro
@@ -17,7 +17,7 @@
 
   @media screen and (min-width: 53.125rem) {
     flex-direction: row;
-    height: 400px;
-    padding: 0 10%;
+    justify-content: space-evenly;
+    height: 500px;
   }
 }

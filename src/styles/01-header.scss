@@ -59,10 +59,11 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      position: absolute;
+      position: fixed;
       top: 70px;
       right: -100%;
       width: 100%;
+      z-index: 10;
       height: 60px;
       list-style: none;
       transition: all 0.2s ease-out;
@@ -99,7 +100,7 @@
 
         .navigation__item {
           height: 100%;
-          width: 12%;
+          width: 100px;
           padding: 0 0.625rem;
         }
       }
@@ -109,5 +110,6 @@
 
 // open navigation list menu
 .open-navigation-list {
+  visibility: visible !important;
   right: 0 !important;
 }
