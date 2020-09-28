@@ -1,8 +1,8 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost/projects/davici/index.html");
+header("Access-Control-Allow-Origin: https://omid-soleimani.com");
 header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json; charset=UTF-8");
-header('Access-Control-Allow-Headers', 'Content-Type');
+header("Access-Control-Allow-Headers: Content-Type");
 
 // check the session status and check id user logged in
 if(isset($_SESSION['login']) && $_SESSION['login'] == true) {
@@ -11,8 +11,10 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true) {
     exit;
 }
 
-include_once '../config/database.php';
-include_once '../objects/user.php';
+$app_path = $_SERVER['DOCUMENT_ROOT'];
+
+require $app_path . "/projects/davici/api/config/database.php";
+require $app_path . "/projects/davici/api/objects/user.php";
 
 // make connection to database
 $database = new Database();

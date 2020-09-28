@@ -6,7 +6,7 @@
     <meta name="description" content="portfolio" />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="omid soleimani" />
-    <!-- <link rel="shortcut icon" href="assets/images/title-icon.png" /> -->
+    <link rel="shortcut icon" href="assets/images/1.jpg" />
     <link rel="stylesheet" href="assets/css/main.min.css" />
     <script
       src="https://kit.fontawesome.com/2afc0aa7f0.js"
@@ -16,6 +16,26 @@
     <title>Omid Soleimani | Web Developer</title>
   </head>
   <body>
+    <!-- ===================
+      global section start 
+    ==================== -->
+
+    <!-- separate button to scroll to top -->
+    <div class="scroll-to-top"><i class="fas fa-angle-up"></i></div>
+    <!-- end of separate button to scroll to top -->
+
+    <!-- result modal start -->
+    <div class="result">
+      <i id="success" class="fas fa-check-circle"></i>
+      <i id="failure" class="fas fa-exclamation-circle"></i>
+      <h5 id="result-message">omid soleimani</h5>
+    </div>
+    <!-- result modal end -->
+
+    <!-- ===================
+      global section end 
+    ==================== -->
+
     <!-- ===================
       landing page start 
     ==================== -->
@@ -296,6 +316,8 @@
             id="contact-message"
             placeholder="Message"
           ></textarea>
+
+          <input type="submit" value="Send" class="submit" />
         </form>
 
         <div class="contact__details">
@@ -325,7 +347,7 @@
       </div>
 
       <div class="copyright">
-        <p>&copy; 2020 <span id="copyright"></span> by Omid Soleimani</p>
+        <p>&copy; 2020 <span id="copyright"></span> Omid Soleimani</p>
       </div>
     </section>
     <!-- ===================

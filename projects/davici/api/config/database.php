@@ -2,10 +2,10 @@
 
 class Database {
 
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $databaseName = "ecommerce-project";
+    private $host = "mysql.omid-soleimani.com";
+    private $username = "omidsoleimani";
+    private $password = "Registered1366";
+    private $databaseName = "daviciprojectomid";
 
     public function connect() {
         try {

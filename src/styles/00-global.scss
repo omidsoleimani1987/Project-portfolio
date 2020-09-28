@@ -1,0 +1,59 @@
+/*-------------------------------
+------- separate button to scroll to top
+-------------------------------*/
+.scroll-to-top {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 3.125rem;
+  right: 3.125rem;
+  z-index: 1000;
+  border: 1px solid map-get($colors, main-blue);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: map-get($colors, main-blue);
+  transition: all 0.4s linear;
+
+  i {
+    color: white;
+    font-size: 1.25rem;
+  }
+}
+
+/*-------------------------------
+------- show result modal 
+-------------------------------*/
+.result {
+  width: 300px;
+  height: 130px;
+  background-color: map-get($colors, light-gray);
+  position: fixed;
+  bottom: 3.4375rem;
+  right: -100%;
+  z-index: 10000;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: right 0.3s ease-in-out;
+
+  i {
+    font-size: 1.875rem;
+    margin-bottom: 0.625rem;
+  }
+  i#success {
+    color: rgb(54, 255, 4);
+  }
+
+  i#failure {
+    color: rgb(255, 4, 4);
+  }
+}
+
+.show-result {
+  right: 1.25rem;
+}
