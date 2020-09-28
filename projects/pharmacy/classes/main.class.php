@@ -98,9 +98,9 @@ class Main extends SetQuery {
             $value = intval($InfoArray['wienerberg_v']) + intval($postArray['wienerberg_v']);
             $this->insertPostInfo($tableName, $medId, $name, $value);
         }
-        if($postArray['phönix_v'] != '') {
-            $name = 'phönix_v';
-            $value = intval($InfoArray['phönix_v']) + intval($postArray['phönix_v']);
+        if($postArray['phoenix_v'] != '') {
+            $name = 'phoenix_v';
+            $value = intval($InfoArray['phoenix_v']) + intval($postArray['phoenix_v']);
             $this->insertPostInfo($tableName, $medId, $name, $value);
         }
         if($postArray['kwizda_v'] != '') {

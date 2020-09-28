@@ -34,8 +34,8 @@ class IconLists extends SetQuery {
         if(intval($iconsArray['wienerberg_k']) != 0) {
             echo '<a class="a" href="../pdf/wienerberg_lieferschein.php" style="display:block; width:30%;"><i class="far fa-file-pdf"></i> Wienerberg Lieferschein</a>';
         }
-        if(intval($iconsArray['phönix_k']) != 0) {
-            echo '<a class="a" href="../pdf/phönix_lieferschein.php" style="display:block; width:30%;"><i class="far fa-file-pdf"></i> Phönix Lieferschein</a>';
+        if(intval($iconsArray['phoenix_k']) != 0) {
+            echo '<a class="a" href="../pdf/phoenix_lieferschein.php" style="display:block; width:30%;"><i class="far fa-file-pdf"></i> phoenix Lieferschein</a>';
         }
         if(intval($iconsArray['kwizda_k']) != 0) {
             echo '<a class="a" href="../pdf/kwizda_lieferschein.php" style="display:block; width:30%;"><i class="far fa-file-pdf"></i> Kwizda Lieferschein</a>';

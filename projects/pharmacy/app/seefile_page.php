@@ -60,7 +60,7 @@ $seefileobject = new SeeFile;
                     <th>Hoffnung</th>
                     <th>Retz</th>
                     <th>Wienerberg</th>
-                    <th>Phönix</th>
+                    <th>phoenix</th>
                     <th>Kwizda</th>
                     <th>Herba</th>
                     <th>Summe</th>

@@ -60,6 +60,7 @@
              * read the users info for login and set the all session variables which we need later
              */
             if($check) {
+                $login_status = false;
                 $userrows = $this->checkLogin();
                 for($i=0; $i<count($userrows); $i++) {
                     if($userrows[$i]['username'] == $this->username && password_verify($this->password, $userrows[$i]['password'])) {
@@ -71,11 +72,12 @@
                         $_SESSION['libraryFileExtension'] = '';
                         $_SESSION['libraryFilepath'] = '';
                         $_SESSION['fileTableName'] = '';
+                        $login_status = true;
                         break;
                     }
                 }
-                if( isset($_SESSION['login']) && isset($_SESSION['username']) && isset($_SESSION['userposition']) )  {
-                    header ("location: $app_path/app/home_page.php");
+                if($login_status)  {
+                    header ("location: ./home_page.php");
                 } else {
                     echo '<h1 class="error"><i class="fas fa-exclamation-triangle"></i> Der Benutzername oder das Passwort ist falsch.</h1>';
                 }

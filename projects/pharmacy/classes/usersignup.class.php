@@ -136,7 +136,7 @@
              */
             if($check) {
                 $this->registerUser($this->firstname, $this->lastname, $this->email, $this->username, $this->password);
-                header ("location: $app_path/app/login_page.php?message=Registrierung erfolgreich. Sie können sich jetzt anmelden.&status=success");
+                header ("location: ./login_page.php?message=Registrierung erfolgreich. Sie können sich jetzt anmelden.&status=success");
             }
         }
     }

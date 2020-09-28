@@ -1,14 +1,10 @@
 <?php
 /**
- * a variable for the root server used in "header" functions in pages
- */
-$app_path = $_SERVER['DOCUMENT_ROOT'] . '/projects/pharmacy';
-/**
  * logout function to delete session and go to starting page
  */
 function logout() {
     session_destroy();
-    header("location: $app_path/index.php");
+    header("location: ../index.php");
     exit();
 }
 /**
@@ -37,7 +33,7 @@ function checkMessage() {
  */
 function userLogoutStatus($message) {
     if(isset($_SESSION['login']) && $_SESSION['login'] == 'success') {
-        header("Location: $app_path/app/error_page.php?message=$message");
+        header("Location: ./error_page.php?message=$message");
         exit;
     }
 }
@@ -46,7 +42,7 @@ function userLogoutStatus($message) {
  */
 function userLoginStatus($message) {
     if(!isset($_SESSION['login']) || $_SESSION['login'] !== 'success') {
-        header("Location: $app_path/app/login_page.php?message=$message&status=fail");
+        header("Location: ./login_page.php?message=$message&status=fail");
         exit;
     }
 }
@@ -55,7 +51,7 @@ function userLoginStatus($message) {
  */
 function searchfileStatus($message) {
     if(!isset($_GET['id']) || trim($_GET['id']) == '') {
-        header("Location: $app_path/app/searchfile_page.php?message=$message&status=fail");
+        header("Location: ./searchfile_page.php?message=$message&status=fail");
         exit;
     }
 }

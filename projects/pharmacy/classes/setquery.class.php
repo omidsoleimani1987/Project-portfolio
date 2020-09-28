@@ -35,7 +35,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
             
         }
     }
@@ -69,7 +69,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -100,7 +100,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -136,7 +136,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         }
     }
 
@@ -170,7 +170,7 @@ class SetQuery extends DatabaseConnect {
 
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -181,51 +181,18 @@ class SetQuery extends DatabaseConnect {
      * @param string $tableName
      * @return void
      */
+
+
     protected function createTable($tableName) {
         $sql = "CREATE TABLE $tableName (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            pzn VARCHAR(255),
-            Bezeichnung VARCHAR(255),
-            Menge VARCHAR(255),
-            Einheit VARCHAR(255),
-            adler_k VARCHAR(255),
-            billroth_k VARCHAR(255),
-            citygate_k VARCHAR(255),
-            hoffnung_k VARCHAR(255),
-            retz_k VARCHAR(255),
-            wienerberg_k VARCHAR(255),
-            phönix_k VARCHAR(255),
-            kwizda_k VARCHAR(255),
-            herba_k VARCHAR(255),
-            Summe_k VARCHAR(255),
-            phönix_prozent VARCHAR(255),
-            kwizda_prozent VARCHAR(255),
-            herba_prozent VARCHAR(255),
-            adler_v VARCHAR(255),
-            billroth_v VARCHAR(255),
-            citygate_v VARCHAR(255),
-            hoffnung_v VARCHAR(255),
-            retz_v VARCHAR(255),
-            wienerberg_v VARCHAR(255),
-            phönix_v VARCHAR(255),
-            kwizda_v VARCHAR(255),
-            herba_v VARCHAR(255),
-            Summe_v VARCHAR(255),
-            Ablauf VARCHAR(255),
-            Viel VARCHAR(255),
-            Kaput VARCHAR(255),
-            Andere VARCHAR(255),
-            Datum VARCHAR(255),
-            Charge VARCHAR(255),
-            register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-            )";
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, pzn VARCHAR(255), Bezeichnung VARCHAR(255), Menge VARCHAR(255), Einheit VARCHAR(255), adler_k VARCHAR(255), billroth_k VARCHAR(255), citygate_k VARCHAR(255), hoffnung_k VARCHAR(255), retz_k VARCHAR(255), wienerberg_k VARCHAR(255), phoenix_k VARCHAR(255), kwizda_k VARCHAR(255), herba_k VARCHAR(255), Summe_k VARCHAR(255), phoenix_prozent VARCHAR(255), kwizda_prozent VARCHAR(255), herba_prozent VARCHAR(255), adler_v VARCHAR(255), billroth_v VARCHAR(255), citygate_v VARCHAR(255), hoffnung_v VARCHAR(255), retz_v VARCHAR(255), wienerberg_v VARCHAR(255), phoenix_v VARCHAR(255), kwizda_v VARCHAR(255), herba_v VARCHAR(255), Summe_v VARCHAR(255), Ablauf VARCHAR(255), Viel VARCHAR(255), Kaput VARCHAR(255), Andere VARCHAR(255), Datum VARCHAR(255), Charge VARCHAR(255), register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                )";
+        
         try {
             $conn = $this->connect();
-            if(!$conn) {
-                throw new Exception('unable to connect to database');
-            }
 
             $stmt = $conn->query($sql);
+
             if(!$stmt) {
                 throw new Exception('unable to query to database');
             } else {
@@ -233,10 +200,8 @@ class SetQuery extends DatabaseConnect {
             }
 
         } catch(Exception $err) {
-
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
-             
+            header("Location: ./error_page.php?message=$message");
         }
     }
 
@@ -254,16 +219,16 @@ class SetQuery extends DatabaseConnect {
      * @param int $hoffnung_k
      * @param int $retz_k
      * @param int $wienerberg_k
-     * @param int $phönix_k
+     * @param int $phoenix_k
      * @param int $kwizda_k
      * @param int $herba_k
-     * @param string $phönix_prozent
+     * @param string $phoenix_prozent
      * @param string $kwizda_prozent
      * @param string $herba_prozent
      * @return void
     */
-    protected function insertExcel($tableName, $pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phönix_k, $kwizda_k, $herba_k, $phönix_prozent, $kwizda_prozent, $herba_prozent) {
-        $sql = "INSERT INTO $tableName (pzn, Bezeichnung, Menge, Einheit, adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phönix_k, kwizda_k, herba_k, phönix_prozent, kwizda_prozent, herba_prozent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    protected function insertExcel($tableName, $pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phoenix_k, $kwizda_k, $herba_k, $phoenix_prozent, $kwizda_prozent, $herba_prozent) {
+        $sql = "INSERT INTO $tableName (pzn, Bezeichnung, Menge, Einheit, adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phoenix_k, kwizda_k, herba_k, phoenix_prozent, kwizda_prozent, herba_prozent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             $conn = $this->connect();
             if(!$conn) {
@@ -273,11 +238,11 @@ class SetQuery extends DatabaseConnect {
             if(!$stmt) {
                 throw new Exception('unable to prepare the statement');
             }
-            $stmt->execute([$pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phönix_k, $kwizda_k, $herba_k, $phönix_prozent, $kwizda_prozent, $herba_prozent]);
+            $stmt->execute([$pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phoenix_k, $kwizda_k, $herba_k, $phoenix_prozent, $kwizda_prozent, $herba_prozent]);
 
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -293,10 +258,11 @@ class SetQuery extends DatabaseConnect {
         try {
             $conn = $this->connect();
             if(!$conn) {
-                throw new Exception('unable to connect to database');
+                throw new Exception('unable to connect to database ');
             }
             $stmt = $conn->exec($sql);
             if(!$stmt) {
+                // throw new Exception('unable to query to database');
                 throw new Exception('unable to query to database');
             } else {
                 return true; 
@@ -304,7 +270,7 @@ class SetQuery extends DatabaseConnect {
 
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -338,7 +304,7 @@ class SetQuery extends DatabaseConnect {
     
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/searchfile_page.php?message=$message&status=fail");
+            header("Location: ./searchfile_page.php?message=$message&status=fail");
         }
     }
     
@@ -369,7 +335,7 @@ class SetQuery extends DatabaseConnect {
     
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/searchfile_page.php?message=$message&status=fail");
+            header("Location: ./searchfile_page.php?message=$message&status=fail");
         }
     }
 
@@ -402,7 +368,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -414,7 +380,7 @@ class SetQuery extends DatabaseConnect {
      * @return array
      */
     protected function getTabledata($tableName) {
-        $sql = "SELECT id, pzn, Bezeichnung, Menge, Einheit, adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phönix_k, kwizda_k, herba_k, Summe_k FROM $tableName";
+        $sql = "SELECT id, pzn, Bezeichnung, Menge, Einheit, adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phoenix_k, kwizda_k, herba_k, Summe_k FROM $tableName";
         try {
             $conn = $this->connect();
             if(!$conn) {
@@ -436,7 +402,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -471,7 +437,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -505,7 +471,7 @@ class SetQuery extends DatabaseConnect {
 
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/searchwork_page.php?message=$message&status=fail");
+            header("Location: ./searchwork_page.php?message=$message&status=fail");
         }
     }
 
@@ -535,7 +501,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -550,7 +516,7 @@ class SetQuery extends DatabaseConnect {
      * @param int $Hoffnung_k
      * @param int $Retz_k
      * @param int $Wienerberg_k
-     * @param int $Phönix_k
+     * @param int $phoenix_k
      * @param int $Kwizda_k
      * @param int $Herba_k
      * @param int $Summe_k
@@ -560,14 +526,14 @@ class SetQuery extends DatabaseConnect {
      * @param int $Hoffnung_v
      * @param int $Retz_v
      * @param int $Wienerberg_v
-     * @param int $Phönix_v
+     * @param int $phoenix_v
      * @param int $Kwizda_v
      * @param int $Herba_v
      * @param int $Summe_v
      * @return void
      */
-    protected function createSummeRow($tableName, $Adler_k, $Billroth_k, $Citygate_k, $Hoffnung_k, $Retz_k, $Wienerberg_k, $Phönix_k, $Kwizda_k, $Herba_k, $Summe_k, $Adler_v, $Billroth_v, $Citygate_v, $Hoffnung_v, $Retz_v, $Wienerberg_v, $Phönix_v, $Kwizda_v, $Herba_v, $Summe_v) {
-        $sql = "UPDATE $tableName SET adler_k=$Adler_k, billroth_k=$Billroth_k, citygate_k=$Citygate_k, hoffnung_k=$Hoffnung_k, retz_k=$Retz_k, wienerberg_k=$Wienerberg_k, phönix_k=$Phönix_k, kwizda_k=$Kwizda_k, herba_k=$Herba_k, Summe_k=$Summe_k, adler_v=$Adler_v, billroth_v=$Billroth_v, citygate_v=$Citygate_v, hoffnung_v=$Hoffnung_v, retz_v=$Retz_v, wienerberg_v=$Wienerberg_v, phönix_v=$Phönix_v, kwizda_v=$Kwizda_v, herba_v=$Herba_v, Summe_v=$Summe_v WHERE Bezeichnung='Summe'";
+    protected function createSummeRow($tableName, $Adler_k, $Billroth_k, $Citygate_k, $Hoffnung_k, $Retz_k, $Wienerberg_k, $phoenix_k, $Kwizda_k, $Herba_k, $Summe_k, $Adler_v, $Billroth_v, $Citygate_v, $Hoffnung_v, $Retz_v, $Wienerberg_v, $phoenix_v, $Kwizda_v, $Herba_v, $Summe_v) {
+        $sql = "UPDATE $tableName SET adler_k=$Adler_k, billroth_k=$Billroth_k, citygate_k=$Citygate_k, hoffnung_k=$Hoffnung_k, retz_k=$Retz_k, wienerberg_k=$Wienerberg_k, phoenix_k=$phoenix_k, kwizda_k=$Kwizda_k, herba_k=$Herba_k, Summe_k=$Summe_k, adler_v=$Adler_v, billroth_v=$Billroth_v, citygate_v=$Citygate_v, hoffnung_v=$Hoffnung_v, retz_v=$Retz_v, wienerberg_v=$Wienerberg_v, phoenix_v=$phoenix_v, kwizda_v=$Kwizda_v, herba_v=$Herba_v, Summe_v=$Summe_v WHERE Bezeichnung='Summe'";
         try {
             $conn = $this->connect();
             if(!$conn) {
@@ -582,7 +548,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -618,7 +584,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -648,7 +614,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -683,7 +649,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -713,7 +679,7 @@ class SetQuery extends DatabaseConnect {
             }
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -747,7 +713,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         } 
     }
@@ -760,7 +726,7 @@ class SetQuery extends DatabaseConnect {
      * @return array
      */
     protected function iconsInfo($tableName) {
-        $sql = "SELECT adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phönix_k, kwizda_k, herba_k FROM $tableName WHERE Bezeichnung='Summe'";
+        $sql = "SELECT adler_k, billroth_k, citygate_k, hoffnung_k, retz_k, wienerberg_k, phoenix_k, kwizda_k, herba_k FROM $tableName WHERE Bezeichnung='Summe'";
         try {
             $conn = $this->connect();
             if(!$conn) {
@@ -782,7 +748,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         } 
     }
@@ -810,7 +776,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
              
         }
     }
@@ -843,7 +809,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         } 
     }
 
@@ -869,7 +835,7 @@ class SetQuery extends DatabaseConnect {
             }
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         }
     }
     /**
@@ -895,7 +861,7 @@ class SetQuery extends DatabaseConnect {
 
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         }
     }
 
@@ -928,7 +894,7 @@ class SetQuery extends DatabaseConnect {
         } catch(Exception $err) {
 
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         } 
     }
     
@@ -954,7 +920,7 @@ class SetQuery extends DatabaseConnect {
             }
         } catch(Exception $err) {
             $message = $err->getMessage();
-            header("Location: $app_path/app/error_page.php?message=$message");
+            header("Location: ./error_page.php?message=$message");
         }
     }
 }

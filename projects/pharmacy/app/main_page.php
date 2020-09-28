@@ -34,7 +34,7 @@ if(count($_POST) > 0) {
 
     $mainobject->postInfo($tableName, $medId, $postArray);
     
-    header ('location: searchwork_page.php');
+    header ('location: ./searchwork_page.php');
 }
 /**
  * fixing the error of not define variable of GET when we come to this page again after submitting the form
@@ -152,12 +152,12 @@ $ResultArray = $mainobject->readMed($tableName, $medId);
                 </div>
             </div>
             <div class="second" id="big_company">
-                <div class="container" id="phönix">
-                    <h3>Phönix</h3>
-                    <h3>bestellt: <span id="phönix_k"><?php echo intval($ResultArray['phönix_k']); ?></span></h3>
-                    <h3>bekommt: <span id="phönix_v"><?php echo intval($ResultArray['phönix_v']); ?></span></h3>
-                    <h3 class="phönix_click">übrig: <span id="phönix_rest"><?php echo (intval($ResultArray['phönix_k']) - intval($ResultArray['phönix_v'])); ?></span></h3>
-                    <input type="number" pattern="[1-9-]+" name="phönix_v" id="phönix_input"/>
+                <div class="container" id="phoenix">
+                    <h3>phoenix</h3>
+                    <h3>bestellt: <span id="phoenix_k"><?php echo intval($ResultArray['phoenix_k']); ?></span></h3>
+                    <h3>bekommt: <span id="phoenix_v"><?php echo intval($ResultArray['phoenix_v']); ?></span></h3>
+                    <h3 class="phoenix_click">übrig: <span id="phoenix_rest"><?php echo (intval($ResultArray['phoenix_k']) - intval($ResultArray['phoenix_v'])); ?></span></h3>
+                    <input type="number" pattern="[1-9-]+" name="phoenix_v" id="phoenix_input"/>
                 </div>
                 <div class="container" id="kwizda">
                     <h3>Kwizda</h3>

@@ -50,7 +50,7 @@
                 $selectorToken = bin2hex(random_bytes(32));
                 
                 //creating the link:
-                $url = "http://localhost/app/resetpasscheck_page.php?selectorToken=" . $selectorToken . "&email=" .$this->email;
+                $url = "https://omid-soleimani.com/projects/pharmacy/app/resetpasscheck_page.php?selectorToken=" . $selectorToken . "&email=" .$this->email;
                 $expire = date("U") + 3600;
 
                 //first we make sure there is no token of the same email(user) address in DB:
@@ -67,12 +67,12 @@
                 $message .= "<p>Andernfalls finden Sie hier den Link zum Zurücksetzen des Passworts:</p>";
                 $message .= '<p><a href="' . $url . '">' . $url . '</a></p>';
 
-                $headers = "From: Apotheke-App <o.soleimani.wd@gmail.com>\r\n";
-                $headers .= "Reply-To: o.soleimani.wd@gmail.com\r\n";
+                $headers = "From: Apotheke-App <omid@omid-soleimani.com>\r\n";
+                $headers .= "Reply-To: omid@omid-soleimani.com\r\n";
                 $headers .= "Content-type: text/html\r\n";
 
                 mail($to, $subject, $message, $headers);
-                header ("location: $app_path/app/login_page.php?message=Wir haben Ihnen eine E-Mail gesendet, bitte überprüfen Sie Ihre E-Mail nach einer Weile.&status=success");
+                header ("location: ./login_page.php?message=Wir haben Ihnen eine E-Mail gesendet, bitte überprüfen Sie Ihre E-Mail nach einer Weile.&status=success");
             }
         }
     }

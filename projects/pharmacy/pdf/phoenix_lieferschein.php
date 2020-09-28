@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/css/lieferschein_link.css" />
     <link rel="stylesheet" href="../style/css/fonts.css" />
     <script defer src="../style/fontawesome/js/all.js"></script>
-    <title>Phönix Lieferschein</title>
+    <title>phoenix Lieferschein</title>
 </head>
 <body>
     <header>
@@ -17,8 +17,8 @@
     </header>
     <main>
         <section class="flex container">
-            <a target="_blank" class="one" href="phönix_lieferschein_sell.php">verkaufen</a>
-            <a target="_blank" class="two" href="phönix_lieferschein_computer.php">privat</a>
+            <a target="_blank" class="one" href="phoenix_lieferschein_sell.php">verkaufen</a>
+            <a target="_blank" class="two" href="phoenix_lieferschein_computer.php">privat</a>
         </section>
     </main>
 </body>

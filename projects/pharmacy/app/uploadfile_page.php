@@ -22,7 +22,7 @@ $fileobject = new UploadFile($_SESSION['username']);
 /**
  * phpspreadsheet import link
  */
-require $_SERVER["DOCUMENT_ROOT"].'/phpspreadsheet/vendor/autoload.php';
+require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/phpspreadsheet/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 if(count($_POST) > 0) {
@@ -65,7 +65,7 @@ if(count($_POST) > 0) {
             $_SESSION['libraryFilename'] = '';
             $_SESSION['libraryFileExtension'] = '';
             $_SESSION['libraryFilepath'] = '';
-            header ('location: home_page.php?message=Die Excel Datei wurde erfolgreich hochgeladen und gespeichert&status=success');
+            header ('location: ./home_page.php?message=Die Excel Datei wurde erfolgreich hochgeladen und gespeichert&status=success');
         }
     }
 }

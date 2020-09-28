@@ -81,7 +81,7 @@ $SummeRowId = count($allResultArray) - 1;
                     <th>Hoffnung</th>
                     <th>Retz</th>
                     <th>Wienerberg</th>
-                    <th>Phönix</th>
+                    <th>phoenix</th>
                     <th>Kwizda</th>
                     <th>Herba</th>
                     <th>Summe</th>
@@ -94,7 +94,7 @@ $SummeRowId = count($allResultArray) - 1;
                     <td><?php echo intval($allResultArray[$SummeRowId]['hoffnung_k']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['retz_k']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['wienerberg_k']);?></td>
-                    <td><?php echo intval($allResultArray[$SummeRowId]['phönix_k']);?></td>
+                    <td><?php echo intval($allResultArray[$SummeRowId]['phoenix_k']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['kwizda_k']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['herba_k']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['Summe_k']);?></td>
@@ -107,7 +107,7 @@ $SummeRowId = count($allResultArray) - 1;
                     <td><?php echo intval($allResultArray[$SummeRowId]['hoffnung_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['retz_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['wienerberg_v']);?></td>
-                    <td><?php echo intval($allResultArray[$SummeRowId]['phönix_v']);?></td>
+                    <td><?php echo intval($allResultArray[$SummeRowId]['phoenix_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['kwizda_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['herba_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['Summe_v']);?></td>
@@ -120,7 +120,7 @@ $SummeRowId = count($allResultArray) - 1;
                     <td><?php echo intval($allResultArray[$SummeRowId]['hoffnung_k']) - intval($allResultArray[$SummeRowId]['hoffnung_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['retz_k']) - intval($allResultArray[$SummeRowId]['retz_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['wienerberg_k']) - intval($allResultArray[$SummeRowId]['wienerberg_v']);?></td>
-                    <td><?php echo intval($allResultArray[$SummeRowId]['phönix_k']) - intval($allResultArray[$SummeRowId]['phönix_v']);?></td>
+                    <td><?php echo intval($allResultArray[$SummeRowId]['phoenix_k']) - intval($allResultArray[$SummeRowId]['phoenix_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['kwizda_k']) - intval($allResultArray[$SummeRowId]['kwizda_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['herba_k']) - intval($allResultArray[$SummeRowId]['herba_v']);?></td>
                     <td><?php echo intval($allResultArray[$SummeRowId]['Summe_k']) - intval($allResultArray[$SummeRowId]['Summe_v']);?></td>

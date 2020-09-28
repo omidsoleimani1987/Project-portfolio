@@ -38,14 +38,14 @@
             if($checkToken == true) {
                 if($this->tokenRecord['expire'] > $currentDate) {
                     $_SESSION['resetPasswordEmail'] = $email;
-                    header("Location: $app_path/app/resetpassword_page.php");
+                    header("Location: ./resetpassword_page.php");
                 } else {
                     $message = 'Die Daten sind abgelaufen, bitte versuchen Sie noch einmal.';
-                    header("Location: $app_path/app/error_page.php?message=$message");
+                    header("Location: ./error_page.php?message=$message");
                 }
             }else {
                 $message = 'Die Daten sind falsch, bitte versuchen Sie noch einmal.';
-                header("Location: $app_path/app/error_page.php?message=$message");
+                header("Location: ./error_page.php?message=$message");
             }
         }
         
@@ -90,10 +90,10 @@
             if($check) {
                 $changepass = $this->updateUserpassword($resetPassEmail, $this->password);
                 if($changepass == true) {
-                    header ("location: $app_path/app/login_page.php?message=Registrierung erfolgreich. Sie können sich jetzt anmelden.&status=success");
+                    header ("location: ./login_page.php?message=Registrierung erfolgreich. Sie können sich jetzt anmelden.&status=success");
                 } else {
                     $message = 'Das Passwort wurde nicht aktuallisiert, bitte versuchen Sie noch einmal.';
-                    header("Location: $app_path/app/error_page.php?message=$message");
+                    header("Location: ./error_page.php?message=$message");
                 }
             }
         }

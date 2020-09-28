@@ -95,9 +95,9 @@
                 $result = $this->updateUserInfo($this->username, $this->firstname, $this->lastname, $this->email, $this->password);
                 if($result == true) {
                     $_SESSION['firstname'] = $this->firstname;
-                    header("Location: $app_path/app/home_page.php?message=Dein Profil wurde erfolgreich aktualisiert.&status=success");
+                    header("Location: ./home_page.php?message=Dein Profil wurde erfolgreich aktualisiert.&status=success");
                 } else {
-                    header("Location: $app_path/app/error_page.php?message=Etwas ist falsch gelaufen, bitte versuchen Sie noch einmal.");
+                    header("Location: ./error_page.php?message=Etwas ist falsch gelaufen, bitte versuchen Sie noch einmal.");
                 }
             }
         }

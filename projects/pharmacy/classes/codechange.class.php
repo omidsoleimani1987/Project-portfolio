@@ -53,7 +53,7 @@
              */
             if($check) {
                 $this->insertNewCode($this->code);
-                header("Location: $app_path/app/home_page.php?message=Der Code wurde erfolgreich gewechselt.&status=success");
+                header("Location: ./home_page.php?message=Der Code wurde erfolgreich gewechselt.&status=success");
             }
         }
     }

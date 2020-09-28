@@ -14,7 +14,7 @@ require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/includes/config.inc.php';
  */    
 if(empty($_GET['selectorToken']) && empty($_GET['email'])) {
     $message = 'Bitte versuchen Sie noch einmal.';
-    header("Location: $app_path/app/error_page.php?message=$message");
+    header("Location: ./error_page.php?message=$message");
 }
 /**
  * comparing the infos inside the link in email with the same values in database

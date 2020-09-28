@@ -145,8 +145,8 @@
                 $this->filename = $this->company . "_" . $this->year  . "_" . $this->month . "_" . rand(1,100) . "." . $this->fileExtension;
                     
                 //moving the file to the folder of the phpspreadsheet library:
-                // $filepath = $_SERVER['DOCUMENT_ROOT'] . '/phpspreadsheet/vendor/phpoffice/phpspreadsheet/samples/Reader/sampleData/' . $this->filename;
-                $filepath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $this->filename;
+                // $filepath = " . $_SERVER['DOCUMENT_ROOT'] . " . '/phpspreadsheet/vendor/phpoffice/phpspreadsheet/samples/Reader/sampleData/' . $this->filename;
+                $filepath = "../uploads/" . $this->filename;
                 move_uploaded_file($_FILES['excelfile']['tmp_name'], $filepath);
                 if(file_exists($filepath)) {
                     ////now we run the function from setQuery class to insert the file information into database(list of uploaded files which is actually the list of excel files as databases ): 
@@ -162,7 +162,7 @@
                     //to control the success at the end:
                     return true;
                 } else {
-                    header("Location: $app_path/app/error_page.php?message=Die Excel Datei wurde nicht hochgeladen, Bitte versuchen Sie noch einmal.");
+                    header("Location: ./error_page.php?message=Die Excel Datei wurde nicht hochgeladen, Bitte versuchen Sie noch einmal.");
                 }
             }    
         }
@@ -180,7 +180,7 @@
             $tableName = str_replace ('.', '_', $tableName);
             $createResult = $this->createTable($tableName);
             //define variables:
-            $pzn  = $Bezeichnung  = $Menge  = $Einheit  = $adler_k  = $billroth_k  = $citygate_k  = $hoffnung_k  = $retz_k  = $wienerberg_k  = $phönix_k  = $kwizda_k  = $herba_k = $phönix_prozent  = $kwizda_prozent  = $herba_prozent  = '';
+            $pzn  = $Bezeichnung  = $Menge  = $Einheit  = $adler_k  = $billroth_k  = $citygate_k  = $hoffnung_k  = $retz_k  = $wienerberg_k  = $phoenix_k  = $kwizda_k  = $herba_k = $phoenix_prozent  = $kwizda_prozent  = $herba_prozent  = '';
             if($createResult) {
                 $excelData = $array;
                 for($i=2; $i<= count($excelData); $i++) {
@@ -195,15 +195,15 @@
                     $hoffnung_k  = intval($excelData[$i]['H']);
                     $retz_k  = intval($excelData[$i]['I']);
                     $wienerberg_k  = intval($excelData[$i]['J']);
-                    $phönix_k  = intval($excelData[$i]['K']);
+                    $phoenix_k  = intval($excelData[$i]['K']);
                     $kwizda_k  = intval($excelData[$i]['L']);
                     $herba_k  = intval($excelData[$i]['M']);
                     //$Summe  = intval($excelData[$i]['N']);
-                    $phönix_prozent  = strval($excelData[$i]['N']);
+                    $phoenix_prozent  = strval($excelData[$i]['N']);
                     $kwizda_prozent  = strval($excelData[$i]['O']);
                     $herba_prozent  = strval($excelData[$i]['P']);
 
-                    $this->insertExcel($tableName, $pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phönix_k, $kwizda_k, $herba_k, $phönix_prozent, $kwizda_prozent, $herba_prozent);
+                    $this->insertExcel($tableName, $pzn, $Bezeichnung, $Menge, $Einheit, $adler_k, $billroth_k, $citygate_k, $hoffnung_k, $retz_k, $wienerberg_k, $phoenix_k, $kwizda_k, $herba_k, $phoenix_prozent, $kwizda_prozent, $herba_prozent);
                 }
                 //inserting the last row as "Summe" just for the "Bezeichnung" field:
                 $lastRow = $this->insertSummeRow($tableName);
@@ -213,7 +213,7 @@
                     return false;
                 }
             } else {
-                header("Location: $app_path/app/error_page.php?message=Die Excel Datei wurde nicht gespeichert, Bitte versuchen Sie noch einmal.");
+                header("Location: ./error_page.php?message=Die Excel Datei wurde nicht gespeichert, Bitte versuchen Sie noch einmal.");
             }
         }
     }

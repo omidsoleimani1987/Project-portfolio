@@ -6,7 +6,7 @@ spl_autoload_register('myAutoLoader');
 
 function myAutoLoader($className) {
     
-    $path = $_SERVER['DOCUMENT_ROOT'] . '/projects/pharmacy/classes/';
+    $path =  $_SERVER['DOCUMENT_ROOT']  . '/projects/pharmacy/classes/';
     $extention = '.class.php';
     $fullPath = $path . strtolower($className) . $extention;
 

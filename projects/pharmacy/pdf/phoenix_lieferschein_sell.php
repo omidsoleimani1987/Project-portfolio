@@ -9,7 +9,7 @@ require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/includes/autoloader.inc.ph
 require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/includes/config.inc.php';
 
 // check if user is logged in
-userLoginStatus('Bitte loggen Sie zuerst ein.');
+userLoginStatus('Bitte loggen Sie zuerst ein');
 
 $tableName = $_SESSION['fileTableName'];
 $find  = '_';
@@ -116,7 +116,7 @@ https://www.wienerberg-apotheke.at
 </div>
 
 <div class="receiver">
-<h2>Phönix Apotheke</h2>
+<h2>phoenix Apotheke</h2>
 </div>
 
 <div class="detail">
@@ -131,31 +131,31 @@ https://www.wienerberg-apotheke.at
 
 <table>
     <tr>
-        <th>PZN</th>
-        <th>Bezeichnung</th>
-        <th>Menge</th>
-        <th>Einheit</th>
-        <th>Bestellt</th>
-        <th>Verkauf</th>
-        <th>Prozent</th>
+    <th>PZN</th>
+    <th>Bezeichnung</th>
+    <th>Menge</th>
+    <th>Einheit</th>
+    <th>Ablauf</th>
+    <th>Charge</th>
+    <th>Summe</th>
     </tr>
 <?php
 for($i=0; $i<count($array); $i++) {
     if($i != count($array)-1) {
-        if(intval($array[$i]['phönix_v']) != 0) {
+        if(intval($array[$i]['phoenix_v']) != 0) {
             echo "<tr>";
             echo '<td>'. $array[$i]['pzn'] . '</td>';
             echo '<td>'. $array[$i]['Bezeichnung'] . '</td>';
             echo '<td>'. $array[$i]['Menge'] . '</td>';
             echo '<td>'. $array[$i]['Einheit'] . '</td>';
-            echo '<td>'. $array[$i]['phönix_k'] . '</td>';
-            echo '<td>'. $array[$i]['phönix_v'] . '</td>';
-            echo '<td>'. $array[$i]['phönix_prozent'] . '</td>';
+            echo '<td>'. $array[$i]['Datum'] . '</td>';
+            echo '<td>'. $array[$i]['Charge'] . '</td>';
+            echo '<td>'. $array[$i]['phoenix_v'] . '</td>';
             echo "</tr>";
         }
     } else {
         echo '<tr class="footer">';
-        echo '<td></td><td></td><td></td><td></td><td></td><td>'.$array[$i]['phönix_k'].'</td><td>'.$array[$i]['phönix_v'].'</td><td></td>';
+        echo '<td>Summe</td><td></td><td></td><td></td><td></td><td></td><td>'.$array[$i]['phoenix_v'].'</td>';
         echo "</tr>";
     }
 }
@@ -180,4 +180,4 @@ $dompdf->stream('Lieferschein.pdf', Array('Attachment'=>0));
 // Output the generated PDF to Browser(download automatically)
 //$dompdf->stream('omid.pdf');
 
-//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////

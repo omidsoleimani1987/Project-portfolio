@@ -15,7 +15,7 @@ class EntranceCode extends SetQuery {
         $currentCode = $this->getCode();
        
             if(password_verify($userCode, $currentCode)) {
-                header("Location: $app_path/app/login_page.php");
+                header("Location: ./app/login_page.php");
             }  else {
                 $answer = 'wrong';
                 return $answer;

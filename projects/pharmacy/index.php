@@ -34,7 +34,8 @@ $result = $codeObject->checkCode($userCode);
     <main>
         <section class="flex container">
             <form action="index.php" method="post" autocomplete="off" class="flex">
-                <input class="input" type="password" name="entrance_code" placeholder="Bitte geben Sie den Einstiegs-Code ein" required="required" autofocus="autofocus" />
+                <input class="input" type="password" name="entrance_code" value="pharmacy"
+                placeholder="Bitte geben Sie den Einstiegs-Code ein" required="required" autofocus="autofocus" />
                 <small>
                     <?php echo ($result === 'wrong') ? 'Der Code ist nicht korrekt.' : '';?>
                 </small>

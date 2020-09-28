@@ -27,7 +27,7 @@ class Searchwork extends SetQuery {
     public $Hoffnung_k = 0;
     public $Retz_k = 0;
     public $Wienerberg_k = 0;
-    public $Phönix_k = 0;
+    public $phoenix_k = 0;
     public $Kwizda_k = 0;
     public $Herba_k = 0;
     public $Summe_k = 0;
@@ -37,7 +37,7 @@ class Searchwork extends SetQuery {
     public $Hoffnung_v = 0;
     public $Retz_v = 0;
     public $Wienerberg_v = 0;
-    public $Phönix_v = 0;
+    public $phoenix_v = 0;
     public $Kwizda_v = 0;
     public $Herba_v = 0;
     public $Summe_v = 0;
@@ -132,9 +132,9 @@ class Searchwork extends SetQuery {
         
         for($i=0; $i<$summeId; $i++) {
             $id = $i + 1;
-            $this->rowSumme_k = intval($ResultArray[$i]['adler_k']) + intval($ResultArray[$i]['billroth_k']) + intval($ResultArray[$i]['citygate_k']) + intval($ResultArray[$i]['hoffnung_k']) + intval($ResultArray[$i]['retz_k']) + intval($ResultArray[$i]['wienerberg_k']) + intval($ResultArray[$i]['phönix_k']) + intval($ResultArray[$i]['kwizda_k']) + intval($ResultArray[$i]['herba_k']);
+            $this->rowSumme_k = intval($ResultArray[$i]['adler_k']) + intval($ResultArray[$i]['billroth_k']) + intval($ResultArray[$i]['citygate_k']) + intval($ResultArray[$i]['hoffnung_k']) + intval($ResultArray[$i]['retz_k']) + intval($ResultArray[$i]['wienerberg_k']) + intval($ResultArray[$i]['phoenix_k']) + intval($ResultArray[$i]['kwizda_k']) + intval($ResultArray[$i]['herba_k']);
 
-            $this->rowSumme_v = intval($ResultArray[$i]['adler_v']) + intval($ResultArray[$i]['billroth_v']) + intval($ResultArray[$i]['citygate_v']) + intval($ResultArray[$i]['hoffnung_v']) + intval($ResultArray[$i]['retz_v']) + intval($ResultArray[$i]['wienerberg_v']) + intval($ResultArray[$i]['phönix_v']) + intval($ResultArray[$i]['kwizda_v']) + intval($ResultArray[$i]['herba_v']);
+            $this->rowSumme_v = intval($ResultArray[$i]['adler_v']) + intval($ResultArray[$i]['billroth_v']) + intval($ResultArray[$i]['citygate_v']) + intval($ResultArray[$i]['hoffnung_v']) + intval($ResultArray[$i]['retz_v']) + intval($ResultArray[$i]['wienerberg_v']) + intval($ResultArray[$i]['phoenix_v']) + intval($ResultArray[$i]['kwizda_v']) + intval($ResultArray[$i]['herba_v']);
 
             $createColumn = $this->createSummeColumn($this->tableName, $id, $this->rowSumme_k, $this->rowSumme_v);
             if($createColumn != true) {
@@ -162,7 +162,7 @@ class Searchwork extends SetQuery {
             $this->Hoffnung_k += intval($ResultArray[$i]['hoffnung_k']);
             $this->Retz_k += intval($ResultArray[$i]['retz_k']);
             $this->Wienerberg_k += intval($ResultArray[$i]['wienerberg_k']);
-            $this->Phönix_k += intval($ResultArray[$i]['phönix_k']);
+            $this->phoenix_k += intval($ResultArray[$i]['phoenix_k']);
             $this->Kwizda_k += intval($ResultArray[$i]['kwizda_k']);
             $this->Herba_k += intval($ResultArray[$i]['herba_k']);
             $this->Summe_k += intval($ResultArray[$i]['Summe_k']);
@@ -172,13 +172,13 @@ class Searchwork extends SetQuery {
             $this->Hoffnung_v += intval($ResultArray[$i]['hoffnung_v']);
             $this->Retz_v += intval($ResultArray[$i]['retz_v']);
             $this->Wienerberg_v += intval($ResultArray[$i]['wienerberg_v']);
-            $this->Phönix_v += intval($ResultArray[$i]['phönix_v']);
+            $this->phoenix_v += intval($ResultArray[$i]['phoenix_v']);
             $this->Kwizda_v += intval($ResultArray[$i]['kwizda_v']);
             $this->Herba_v += intval($ResultArray[$i]['herba_v']);
             $this->Summe_v += intval($ResultArray[$i]['Summe_v']);
         }
 
-        $createRow = $this->createSummeRow($this->tableName, $this->Adler_k, $this->Billroth_k, $this->Citygate_k, $this->Hoffnung_k, $this->Retz_k, $this->Wienerberg_k, $this->Phönix_k, $this->Kwizda_k, $this->Herba_k, $this->Summe_k, $this->Adler_v, $this->Billroth_v, $this->Citygate_v, $this->Hoffnung_v, $this->Retz_v, $this->Wienerberg_v, $this->Phönix_v, $this->Kwizda_v, $this->Herba_v, $this->Summe_v);
+        $createRow = $this->createSummeRow($this->tableName, $this->Adler_k, $this->Billroth_k, $this->Citygate_k, $this->Hoffnung_k, $this->Retz_k, $this->Wienerberg_k, $this->phoenix_k, $this->Kwizda_k, $this->Herba_k, $this->Summe_k, $this->Adler_v, $this->Billroth_v, $this->Citygate_v, $this->Hoffnung_v, $this->Retz_v, $this->Wienerberg_v, $this->phoenix_v, $this->Kwizda_v, $this->Herba_v, $this->Summe_v);
         if($createRow == true) {
             return $ResultArray;
         } else{
