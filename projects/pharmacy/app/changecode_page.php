@@ -4,12 +4,12 @@ session_start();
 /**
  * class auto loader:
  */
-require $_SERVER["DOCUMENT_ROOT"].'/includes/autoloader.inc.php';
+require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/includes/autoloader.inc.php';
 
 /**
  * config:
  */
-require $_SERVER["DOCUMENT_ROOT"].'/includes/config.inc.php';
+require $_SERVER["DOCUMENT_ROOT"].'/projects/pharmacy/includes/config.inc.php';
     
 /**
  * check if user is already logged in
