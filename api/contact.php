@@ -12,8 +12,9 @@ $userEmail = htmlspecialchars($user_data->email);
 $userMessage = htmlspecialchars($user_data->message);
 
 $to = 'o.soleimani.ie@gmail.com';
-$subject = "sender name: {$username}";
-$message = "<h3>sender email : {$userEmail}</h3>";
+$subject = "portfolio contact form";
+$message = "<h3>sender name : {$username}</h3>";
+$message .= "<h4>sender email : {$userEmail}</h4>";
 $message .= "<p>{$userMessage}</p>";
 
 $headers = "From: portfolio-website <omid@omid_soleimani.com>\r\n";

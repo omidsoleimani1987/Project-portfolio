@@ -4,11 +4,12 @@
   justify-content: center;
   align-items: center;
   padding-top: 1.25rem;
+  margin-bottom: 9.375rem;
 
   h1 {
-    font-size: 2rem;
+    font-size: 45px;
     padding: 0 1.25rem;
-    margin-bottom: 1.875rem;
+    margin-bottom: 3.125rem;
   }
 
   .project {
@@ -16,15 +17,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transform: translateY(200px);
+    // opacity: 0;
+    margin-bottom: 5rem;
 
     .project__info {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 0 0.625rem;
+      padding: 0 10px 0 30px;
 
       .project__title {
         font-size: 1.5625rem;
@@ -105,25 +106,25 @@
       }
 
       .project__image {
-        max-width: 60%;
+        width: 50%;
+        max-width: 650px;
+        max-height: 650px;
       }
     }
   }
 }
 
-// fade-in the project separately
-.fade-in-project {
-  animation: project-fade-in 0.5s ease forwards;
-}
+// // fade-in the project separately
+// .fade-in-project {
+//   animation: project-fade-in 0.3s linear forwards;
+// }
 
-@keyframes project-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(200px);
-  }
+// @keyframes project-fade-in {
+//   0% {
+//     opacity: 0;
+//   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+//   100% {
+//     opacity: 1;
+//   }
+// }

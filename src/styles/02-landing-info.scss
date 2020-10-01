@@ -8,12 +8,12 @@
   /*=============================
         ============ intro
         ===============================*/
-  @import '02-intro.scss';
+  @import '03-landing-intro.scss';
 
   /*=============================
         ============ image
         ===============================*/
-  @import '03-image.scss';
+  @import '04-landing-image.scss';
 
   @media screen and (min-width: 53.125rem) {
     flex-direction: row;
