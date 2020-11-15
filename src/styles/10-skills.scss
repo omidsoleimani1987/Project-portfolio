@@ -85,6 +85,21 @@
   .webpack {
     @include backgroundImage(url(' ../images/webpack.png '));
   }
+  .vue {
+    @include backgroundImage(url(' ../images/vue.png '));
+  }
+  .jest {
+    @include backgroundImage(url(' ../images/jest.png '));
+  }
+  .typeScript {
+    @include backgroundImage(url(' ../images/typescript.png '));
+  }
+  .vuetify {
+    @include backgroundImage(url(' ../images/vuetify.png '));
+  }
+  .nodejs {
+    @include backgroundImage(url(' ../images/nodejs.png '));
+  }
 
   .skills__brand {
     border: 1px solid rgb(17, 0, 255);
