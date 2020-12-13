@@ -94,11 +94,26 @@
   .typeScript {
     @include backgroundImage(url(' ../images/typescript.png '));
   }
-  .vuetify {
-    @include backgroundImage(url(' ../images/vuetify.png '));
+  .material {
+    @include backgroundImage(url(' ../images/material.png '));
   }
   .nodejs {
     @include backgroundImage(url(' ../images/nodejs.png '));
+  }
+  .angular {
+    @include backgroundImage(url(' ../images/angular.png '));
+  }
+  .mongodb {
+    @include backgroundImage(url(' ../images/mongodb.png '));
+  }
+  .express {
+    @include backgroundImage(url(' ../images/express.png '));
+  }
+  .docker {
+    @include backgroundImage(url(' ../images/docker.png '));
+  }
+  .firebase {
+    @include backgroundImage(url(' ../images/firebase.png '));
   }
 
   .skills__brand {
